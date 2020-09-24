@@ -1,5 +1,7 @@
 'use strict'
 
+const marked = require('marked')
+
 function addButton(element, label, callback) {
   const button = document.createElement('button')
   button.innerText = label

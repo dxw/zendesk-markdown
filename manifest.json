@@ -9,7 +9,7 @@
         "https://*.zendesk.com/*"
       ],
       "js": [
-        "main.js"
+        "build/main.min.js"
       ],
       "run_at": "document_end"
     }

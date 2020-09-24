@@ -4,6 +4,8 @@ Force Zendesk to let you use Markdown.
 
 ## Development
 
+Run `make` to build the JS.
+
 ### Chrome
 
 https://developer.chrome.com/extensions/getstarted

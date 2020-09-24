@@ -1,0 +1,17 @@
+{
+  "name": "Zendesk Markdown",
+  "version": "0.1.0",
+  "description": "Forces Zendesk to let you use Markdown",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.zendesk.com/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

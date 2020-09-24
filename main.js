@@ -16,13 +16,14 @@ function sleep(ms) {
 }
 
 window.addEventListener('load', async function () {
-  // wait until the editor is loaded (if it ever gets loaded)
+  // Keep searching for editors forever
   while (true) {
-    await sleep(100)
-    const editor = document.querySelector('#editor0')
+    const editor = document.querySelector('.ember-view > .editor:not(.zendesk-markdown-loaded)')
     if (editor !== null) {
+      editor.classList.add('zendesk-markdown-loaded')
       run(editor)
-      break
+    } else {
+      await sleep(100)
     }
   }
 })
@@ -31,17 +32,22 @@ function run(editor) {
   const toolbar = editor.querySelector('.zendesk-editor--custom-tools')
   const richText = editor.querySelector('.zendesk-editor--rich-text-comment')
 
+  // Self-documentation
+  if (toolbar !== null) {
+    addButton(toolbar, 'Markdown?', function () {
+      alert('This is a browser extension. https://github.com/dxw/zendesk-markdown')
+    })
+  }
+
+  // Add the textarea
   const textarea = document.createElement('textarea')
   textarea.style.backgroundColor = '#ddd'
   editor.insertBefore(textarea, editor.firstChild)
 
+  // Hook the textarea up to the rich text field
   textarea.addEventListener('input', function () {
     const input = textarea.value
     const output = marked(input)
     richText.innerHTML = output
-  })
-
-  addButton(toolbar, 'Markdown?', function () {
-    alert('This is a browser extension. https://github.com/dxw/zendesk-markdown')
   })
 }

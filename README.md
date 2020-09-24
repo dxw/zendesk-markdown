@@ -2,6 +2,10 @@
 
 Force Zendesk to let you use Markdown.
 
+## Installing
+
+There's no "proper" way to install this yet. Use the guide in the Development section below.
+
 ## Development
 
 Run `make` to build the JS.

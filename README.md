@@ -25,3 +25,16 @@ Reload the extension:
 
 1. Visit chrome://extensions/
 1. On this extension, click the 🔄 button
+
+### Firefox
+
+Install the extension:
+
+1. Visit about:debugging#/runtime/this-firefox
+1. Click "Load Temporary Add-on..."
+1. Select the `manifest.json` file in this directory
+
+Reload the extension:
+
+1. Visit about:debugging#/runtime/this-firefox
+1. On this extension, click the "Reload" button

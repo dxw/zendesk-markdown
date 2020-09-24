@@ -54,7 +54,7 @@ function run(editor) {
   const textarea = document.createElement('textarea')
   textarea.style.backgroundColor = '#ddd'
   addAutoResize(textarea)
-  editor.insertBefore(textarea, editor.firstChild)
+  editor.parentElement.insertBefore(textarea, editor)
 
   // Hook the textarea up to the rich text field
   textarea.addEventListener('input', function () {

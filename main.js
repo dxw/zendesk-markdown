@@ -56,6 +56,9 @@ function run(editor) {
   addAutoResize(textarea)
   editor.parentElement.insertBefore(textarea, editor)
 
+  // Disable editing the rich text field
+  richText.contentEditable = false
+
   // Hook the textarea up to the rich text field
   textarea.addEventListener('input', function () {
     const input = textarea.value

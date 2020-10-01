@@ -1,6 +1,6 @@
 'use strict'
 
-const marked = require('marked')
+const marked = require('./marked-config')
 
 // https://stephanwagner.me/auto-resizing-textarea-with-vanilla-javascript
 function addAutoResize(element) {

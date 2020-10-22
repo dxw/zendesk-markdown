@@ -2,15 +2,10 @@
 
 const marked = require('./marked-config')
 
-// https://stephanwagner.me/auto-resizing-textarea-with-vanilla-javascript
 function addAutoResize(element) {
-  element.style.boxSizing = 'border-box';
-  var offset = element.offsetHeight - element.clientHeight;
-  element.addEventListener('input', function (event) {
-    event.target.style.height = 'auto';
-    event.target.style.height = event.target.scrollHeight + offset + 'px';
-  });
-  element.removeAttribute('data-autoresize');
+  element.addEventListener('input', function () {
+    element.style.height = `${element.scrollHeight}px`
+  })
 }
 
 function addButton(element, label, callback) {

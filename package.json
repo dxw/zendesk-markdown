@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "elliptic": "^6.5.4",
     "marked": "^2.0.0"
   },
   "devDependencies": {
